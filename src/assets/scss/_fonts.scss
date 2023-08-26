@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
+* {
+    font-family: "Montserrat", "sans-serif";
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "ffk";
+    src: url("@/assets/fonts/ffk.eot?vgpoxq");
+    src: url("@/assets/fonts/ffk.eot?vgpoxq#iefix") format("embedded-opentype"),
+        url("@/assets/fonts/ffk.ttf?vgpoxq") format("truetype"), url("@/assets/fonts/ffk.woff?vgpoxq") format("woff"),
+        url("@/assets/fonts/ffk.svg?vgpoxq#ffk") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: "Roundo";
+    src: url("@/assets/fonts/Roundo-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="i-"],
+[class*=" i-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "ffk" !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.i-phone:before {
+    content: "\e901";
+}
+.i-mail:before {
+    content: "\e906";
+}
+.i-marker:before {
+    content: "\e907";
+}
+.i-instagram:before {
+    content: "\e900";
+}
+.i-github:before {
+    content: "\e902";
+}
+.i-vk:before {
+    content: "\e904";
+}
+.i-check:before {
+    content: "\e90c";
+}
+.i-chevron:before {
+    content: "\e903";
+}
+.i-arrow-up:before {
+    content: "\e905";
+}
+.i-close:before {
+    content: "\e909";
+}
+.i-search:before {
+    content: "\e90f";
+}
+.i-file-empty:before {
+    content: "\e924";
+}
+.i-pushpin:before {
+    content: "\e946";
+}
+.i-bookmark:before {
+    content: "\e9d2";
+}

@@ -1,0 +1,16 @@
+@use '@/assets/scss/null';
+@use '@/assets/scss/vars';
+@use '@/assets/scss/fonts';
+
+.main {
+    background-color: vars.$color-g-dark;
+
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1530px;
+    width: 100%;
+    margin: 0 auto;
+}
