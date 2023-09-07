@@ -10,6 +10,11 @@ import AppHeader from "@/components/AppHeader"
 import AppMainMenu from "@/components/AppMainMenu"
 import AppDropDownMenu from "@/components/AppDropMenu"
 
+import AppSectionHeader from "@/components/AppSectionHeader"
+
+import AppCarousel from "@/components/AppCarousel"
+import AppCountryView from "@/components/AppCountryView"
+
 export default [
     AppButton,
     AppTitle,
@@ -21,5 +26,10 @@ export default [
 
     AppHeader,
     AppMainMenu,
-    AppDropDownMenu
+    AppDropDownMenu,
+
+    AppSectionHeader,
+
+    AppCarousel,
+    AppCountryView
 ]

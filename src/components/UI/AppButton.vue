@@ -41,6 +41,8 @@ export default {
     font-size: 12px;
     font-weight: 500;
     transition: all .12s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 
     .lines {
         span {

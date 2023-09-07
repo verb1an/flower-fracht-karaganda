@@ -7,16 +7,19 @@
                     <span>Flower<br />Fracht<br />Karaganda</span>
                 </router-link>
 
-                <app-main-menu></app-main-menu>
+                <div class="header__buttons">
+                    <app-main-menu></app-main-menu>
 
-                <div class="switch__lang">
-                    <app-drop-menu
-                        :current="lang"
-                        :menu="langItems"
-                        :style="'border'"
-                        @menu:returnValue="(value) => lang = value"
-                    ></app-drop-menu>
+                    <div class="switch__lang">
+                        <app-drop-menu
+                            :current="lang"
+                            :menu="langItems"
+                            :style="'border'"
+                            @menu:returnValue="(value) => lang = value"
+                        ></app-drop-menu>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </header>
@@ -43,6 +46,11 @@ const langItems = ref(["Ru", "En", "Kz", "Es"]);
         padding: 10px 0;
         display: flex;
         justify-content: space-between;
+    }
+
+    .header__buttons {
+        display: flex;
+        align-items: center;
     }
 }
 .logo {

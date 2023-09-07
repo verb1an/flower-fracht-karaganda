@@ -21,6 +21,8 @@ export default {
         font-family: "Montserrat", "Arial", "sans-serif";
         font-weight: 600;
         color: vars.$color-g-white;
+        padding: 0;
+        margin: 0;
     }
 
     h1 {

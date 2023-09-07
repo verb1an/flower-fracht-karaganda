@@ -92,10 +92,12 @@ function returnValue(event) {
 
             span.text {
                 position: relative;
+                overflow: hidden;
                 width: 46px;
                 height: 46px;
                 padding: 16px 13px;
                 text-align: center;
+                text-transform: uppercase;
                 border: 1px solid vars.$color-g-gray;
                 margin-right: 10px;
 
@@ -111,6 +113,7 @@ function returnValue(event) {
                     transition: all 0.12s ease-in;
                     font-size: 12px;
                     font-weight: 600;
+                    text-transform: uppercase;
 
                     &.current {
                         opacity: 1;
@@ -133,7 +136,8 @@ function returnValue(event) {
     .dropdown__nav {
         position: absolute;
         top: 100%;
-        right: -20%;
+        right: 0;
+        transform: translate(0, -20%);
         opacity: 0;
         z-index: 100;
         pointer-events: none;
@@ -164,7 +168,7 @@ function returnValue(event) {
 
     &[data-show="true"] {
         .dropdown__nav {
-            right: 0;
+            transform: translate(0, 0);
             pointer-events: auto;
             opacity: 1;
         }
