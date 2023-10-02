@@ -8,6 +8,7 @@
                 :alt="'slider carousel flower'"
                 :data-current="n - 1 == carousel.active.value"
             />
+            <span>{{ carousel.list[carousel.active.value].country }}</span>
         </div>
 
         <div class="controlls">
@@ -15,7 +16,7 @@
                 v-for="n in carousel.list.length"
                 :key="n"
                 :data-show="carousel.list[n - 1].pos <= 3 && carousel.list[n - 1].pos >= 1"
-                :pos="carousel.list[n - 1].pos"
+                :data-pos="carousel.list[n - 1].pos"
                 class="cont"
                 :style="`transform: translateX(${190 * carousel.list[n - 1].pos}px);`"
             >
@@ -25,6 +26,7 @@
                     :data-target="n - 1"
                     @click="carousel.switchSlide(n - 1)"
                 />
+                <span class="country__tr">{{ carousel.list[n - 1].country.substr(0, 2) }}</span>
             </div>
         </div>
 
@@ -49,10 +51,10 @@ const props = defineProps({
 });
 
 const carousel = useCarouselIntro(props.list);
-// console.log(carousel);
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/vars";
 .slider {
     position: absolute;
     left: 0;
@@ -61,6 +63,7 @@ const carousel = useCarouselIntro(props.list);
         position: relative;
         width: 425px;
         height: 880px;
+
         img {
             position: absolute;
             top: 0;
@@ -74,6 +77,19 @@ const carousel = useCarouselIntro(props.list);
             &[data-current="true"] {
                 opacity: 1;
             }
+        }
+
+        span {
+            position: absolute;
+            z-index: 50;
+            left: 50%;
+            bottom: 60px;
+            transform: translate(-50%, 0);
+            color: vars.$color-g-white;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.5;
+            text-transform: uppercase;
         }
 
         &::before {
@@ -97,6 +113,7 @@ const carousel = useCarouselIntro(props.list);
         align-items: center;
 
         .cont {
+            pointer-events: none;
             position: absolute;
             top: 0;
             left: 0;
@@ -104,14 +121,29 @@ const carousel = useCarouselIntro(props.list);
             height: 250px;
             margin-right: 30px;
             cursor: pointer;
-            transition: all 0.24s ease-in;
+            transition: all 0.3s ease-in;
 
             img {
-                width: 100%;
-                height: 100%;
+                width: 160px;
+                height: 240px;
                 object-fit: cover;
                 opacity: 0;
                 transition: all 0.24s ease-in;
+            }
+
+            .country__tr {
+                display: block;
+                text-align: center;
+                color: vars.$color-g-white;
+                font-size: 14px;
+                font-weight: 600;
+                opacity: 0.6;
+                margin: 25px auto;
+                transition: all 0.12s ease-in;
+                
+                &.show__false {
+                    opacity: 0;
+                }
             }
 
             &[data-show="true"] {
@@ -119,6 +151,24 @@ const carousel = useCarouselIntro(props.list);
                 width: 160px;
 
                 img {
+                    opacity: 1;
+                }
+            }
+
+            &[data-pos="0"] {
+                .country__tr {
+                    opacity: 0;
+                }
+            }
+
+            &[data-pos="5"] {
+                .country__tr {
+                    transition-delay: .3s;
+                }
+            }
+
+            &:hover {
+                .country__tr {
                     opacity: 1;
                 }
             }

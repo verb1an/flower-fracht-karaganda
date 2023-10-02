@@ -1,5 +1,5 @@
 <template>
-    <seciton class="section__header" v-bind="$attrs">
+    <seciton class="section__header" v-bind="$attr">
         <span class="suptitle">Flower Fracht Karaganda</span>
         <app-title><h2>{{ title }}</h2></app-title>
     </seciton>
@@ -23,6 +23,7 @@ defineProps({
 <style lang="scss" scoped>
 @use "@/assets/scss/vars";
 .section__header {
+    display: block;
     color: vars.$color-g-white;
 
     span.suptitle {

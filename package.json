@@ -9,8 +9,13 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "overlayscrollbars": "^2.3.2",
+    "overlayscrollbars-vue": "^0.5.5",
+    "vite": "^4.4.9",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
+    "vue3-google-map": "^0.18.0",
+    "vuescroll": "^5.1.1",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
