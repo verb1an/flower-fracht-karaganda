@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import AppHome from "@/views/AppHome";
 import AppOurStocks from "@/views/AppOurStocks";
+import AppForBrokers from "@/views/AppForBrokers";
 
 const routes = [
     {
@@ -12,6 +13,11 @@ const routes = [
         path: "/our-stocks",
         name: "stocks",
         component: AppOurStocks,
+    },
+    {
+        path: "/for-brokers",
+        name: "forBrokers",
+        component: AppForBrokers,
     },
 ];
 

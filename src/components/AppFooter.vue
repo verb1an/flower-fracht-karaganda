@@ -5,12 +5,12 @@
                 <app-logo />
                 <app-main-menu class="footer__style"></app-main-menu>
                 <div class="contacts">
-                    <a href="tel:+74957378585"><span class="i-phone"></span>+7 (495) 737 8585</a>
-                    <a href="mailto:ffkaragandainfo@info.ru"><span class="i-mail"></span>ffkaragandainfo@info.ru</a>
+                    <a class="link__item" href="tel:+74957378585"><span class="i-phone"></span>+7 (495) 737 8585</a>
+                    <a class="link__item" href="mailto:ffkaragandainfo@info.ru"><span class="i-mail"></span>ffkaragandainfo@info.ru</a>
                 </div>
                 <div class="copyright">
-                    <a href="#">Политика конфеденциальности</a>
-                    <span class="cpr">Copyright ©  2023  All rights reserved</span>
+                    <a class="link__item" href="#">Политика конфеденциальности</a>
+                    <span class="link__item cpr">Copyright ©  2023  All rights reserved</span>
                 </div>
             </div>
         </div>
@@ -27,6 +27,7 @@ export default {
 @use "@/assets/scss/vars";
 .section.footer {
     color: vars.$color-g-white;
+    padding: 40px 0;
 
     .section__inner {
         display: grid;
@@ -38,8 +39,12 @@ export default {
         display: grid;
         grid-template-rows: repeat(2, 1fr);
 
-        a, span {
+        .link__item {
             margin-bottom: 14px;
+
+            span {
+                margin-right: 10px;
+            }
         }
     }
     .nav {

@@ -1,7 +1,7 @@
 <template>
     <nav class="nav" v-bind="$attr">
         <ul class="menu">
-            <li v-for="item in menuItems" :key="item.to" class="menu__item">
+            <li v-for="item in menu" :key="item.to" class="menu__item">
                 <router-link :to="item.to">{{ item.text }}</router-link>
             </li>
         </ul>
@@ -15,26 +15,16 @@ export default {
 </script>
 
 <script setup>
-import { ref } from "vue";
+import { inject } from "vue";
 
-const menuItems = ref([
-    {
-        text: "Главная",
-        to: "/",
-    },
-    {
-        text: "Наши склады",
-        to: "/our-stocks",
-    },
-    {
-        text: "Брокерам",
-        to: "/",
-    },
-    {
-        text: "Контакты",
-        to: "/",
-    },
-]);
+const menu = inject("main-menu");
+
+// defineProps({
+//     menu: {
+//         type: Array,
+//         required: true
+//     }
+// })
 </script>
 
 <style lang="scss" scoped>

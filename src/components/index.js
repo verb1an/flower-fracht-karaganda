@@ -10,8 +10,8 @@ import AppInput from "@/components/UI/AppInput"
 import AppHeader from "@/components/AppHeader"
 import AppFooter from "@/components/AppFooter"
 import AppMainMenu from "@/components/AppMainMenu"
-import AppDropDownMenu from "@/components/AppDropMenu"
 import AppCallBack from "@/components/AppCallBack"
+import AppPageHeader from "@/components/AppPageHeader"
 import AppTabs from "@/components/AppTabs"
 import AppTab from "@/components/AppTab"
 import AppMap from "@/components/AppMap"
@@ -34,8 +34,8 @@ export default [
     AppHeader,
     AppFooter,
     AppMainMenu,
-    AppDropDownMenu,
     AppCallBack,
+    AppPageHeader,
     AppTabs,
     AppTab,
     AppMap,

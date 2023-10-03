@@ -9,7 +9,30 @@
     </main>
 </template>
 
-<script setup></script>
+<script setup>
+import { provide } from "vue";
+
+const menuItems = [
+    {
+        text: "Главная",
+        to: "/",
+    },
+    {
+        text: "Наши склады",
+        to: "/our-stocks",
+    },
+    {
+        text: "Брокерам",
+        to: "/for-brokers",
+    },
+    {
+        text: "Контакты",
+        to: "/",
+    },
+];
+
+provide("main-menu", menuItems);
+</script>
 
 <style lang="scss">
 @use "@/assets/scss/main";
