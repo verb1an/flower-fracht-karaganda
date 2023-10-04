@@ -1,8 +1,8 @@
 <template>
-    <seciton class="section__header" v-bind="$attr">
+    <section class="section__header" v-bind="$attrs">
         <span class="suptitle">Flower Fracht Karaganda</span>
         <app-title><h2>{{ title }}</h2></app-title>
-    </seciton>
+    </section>
 </template>
 
 <script>

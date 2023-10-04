@@ -1,14 +1,4 @@
 <template>
-        <!-- <div class="headers">
-            <div class="titles">
-                <app-title class="suptitle"
-                    ><h6 style="font-size: 12px; font-weight: 500; text-transform: uppercase">
-                        Flower Fracht Karaganda
-                    </h6></app-title
-                >
-                <app-title><h2 style="font-size: 72px; font-weight: 600">Наши склады</h2></app-title>
-            </div>
-        </div> -->
 
     <app-page-header :title="'Наши склады'" :imgLink="'assets/img/d824092d942b48c2c2690f3233671f43.jpg'" />
 
@@ -61,15 +51,7 @@
                         </OverlayScrollbarsComponent>
                     </div>
                     <div class="map">
-                        <YandexMap
-                            :coordinates="coordinates"
-                            :settings="settings"
-                            :detailed-controls="detailedControls"
-                            :controls="controls"
-                            :zoom="14"
-                        >
-                            <YandexMarker :marker-id="'stocks-map'" :coordinates="coordinates" ></YandexMarker>
-                        </YandexMap>
+                        <app-map :coords="coordinates" :marker="{id: 'stocks-map', coord: coordinates}" />
                     </div>
                 </div>
 
@@ -81,7 +63,6 @@
 <script setup>
 import { OverlayScrollbarsComponent } from "overlayscrollbars-vue";
 import "overlayscrollbars/overlayscrollbars.css";
-import { YandexMap, YandexMarker } from "vue-yandex-maps";
 
 const currentStockInfo = {
     id: 1,
@@ -140,12 +121,11 @@ const showHideTabInfo = (event) => {
     event.target.closest(`.${event.target.closest("a").getAttribute("data-targetElement")}`).classList.toggle("show");
 };
 
-const settings = {
-    apiKey: '408935e7-ab0a-4b59-811b-f9a70134e4ef'
-}
+/* 
+    <!-- todo: add change map address on change tab or address -->
+*/
+
 const coordinates = [55.70642657884516, 37.71220213865642];
-const controls = ["default"];
-const detailedControls = { zoomControl: { position: { right: 10, top: 50 } } };
 
 </script>
 
@@ -174,10 +154,6 @@ section.stocks__placement {
         .map {
             width: 80%;
             height: 690px;
-
-            .yandex-container {
-                height: 100%;
-            }
         }
 
         .tab__wrapper {

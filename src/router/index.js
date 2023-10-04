@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import AppHome from "@/views/AppHome";
 import AppOurStocks from "@/views/AppOurStocks";
 import AppForBrokers from "@/views/AppForBrokers";
+import AppContacts from "@/views/AppContacts";
 
 const routes = [
     {
@@ -18,6 +19,11 @@ const routes = [
         path: "/for-brokers",
         name: "forBrokers",
         component: AppForBrokers,
+    },
+    {
+        path: "/contacts", 
+        name: "contacts",
+        component: AppContacts,
     },
 ];
 

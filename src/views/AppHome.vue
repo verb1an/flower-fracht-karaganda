@@ -40,65 +40,80 @@
         <div class="container">
             <div class="section__inner">
                 <app-section-header class="tac" :title="'О нас в цифрах'"></app-section-header>
+                <!-- todo: Add content -->
                 <div class="content">
-                    <div class="features__item">
-                        <span class="icon"
-                            ><img src="@/assets/icons/features/i-calendar.svg" alt="icon calendar"
-                        /></span>
-                        <div class="headers">
+                    <app-features-item>
+                        <template #icon>
+                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar">
+                        </template>
+                        <template #title>
                             <app-title><h5>7 лет</h5></app-title>
-                            <div class="text">Успешно работаем уже более семи лет</div>
-                        </div>
-                    </div>
-                    <div class="features__item">
-                        <span class="icon"
-                            ><img src="@/assets/icons/features/i-calendar.svg" alt="icon calendar"
-                        /></span>
-                        <div class="headers">
+                        </template>
+                        <template #text>
+                            <p>Успешно работаем уже более семи лет</p>
+                        </template>
+                    </app-features-item>
+                    <app-features-item>
+                        <template #icon>
+                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar">
+                        </template>
+                        <template #title>
                             <app-title><h5>7 лет</h5></app-title>
-                            <div class="text">Успешно работаем уже более семи лет</div>
-                        </div>
-                    </div>
-                    <div class="features__item">
-                        <span class="icon"
-                            ><img src="@/assets/icons/features/i-calendar.svg" alt="icon calendar"
-                        /></span>
-                        <div class="headers">
+                        </template>
+                        <template #text>
+                            <p>Успешно работаем уже более семи лет</p>
+                        </template>
+                    </app-features-item>
+                    <app-features-item>
+                        <template #icon>
+                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar">
+                        </template>
+                        <template #title>
                             <app-title><h5>7 лет</h5></app-title>
-                            <div class="text">Успешно работаем уже более семи лет</div>
-                        </div>
-                    </div>
-                    <div class="features__item">
-                        <span class="icon"
-                            ><img src="@/assets/icons/features/i-calendar.svg" alt="icon calendar"
-                        /></span>
-                        <div class="headers">
+                        </template>
+                        <template #text>
+                            <p>Успешно работаем уже более семи лет</p>
+                        </template>
+                    </app-features-item>
+                    <app-features-item>
+                        <template #icon>
+                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar">
+                        </template>
+                        <template #title>
                             <app-title><h5>7 лет</h5></app-title>
-                            <div class="text">Успешно работаем уже более семи лет</div>
-                        </div>
-                    </div>
-                    <div class="features__item">
-                        <span class="icon"
-                            ><img src="@/assets/icons/features/i-calendar.svg" alt="icon calendar"
-                        /></span>
-                        <div class="headers">
+                        </template>
+                        <template #text>
+                            <p>Успешно работаем уже более семи лет</p>
+                        </template>
+                    </app-features-item>
+                    <app-features-item>
+                        <template #icon>
+                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar">
+                        </template>
+                        <template #title>
                             <app-title><h5>7 лет</h5></app-title>
-                            <div class="text">Успешно работаем уже более семи лет</div>
-                        </div>
-                    </div>
-                    <div class="features__item">
-                        <span class="icon"
-                            ><img src="@/assets/icons/features/i-calendar.svg" alt="icon calendar"
-                        /></span>
-                        <div class="headers">
+                        </template>
+                        <template #text>
+                            <p>Успешно работаем уже более семи лет</p>
+                        </template>
+                    </app-features-item>
+                    <app-features-item>
+                        <template #icon>
+                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar">
+                        </template>
+                        <template #title>
                             <app-title><h5>7 лет</h5></app-title>
-                            <div class="text">Успешно работаем уже более семи лет</div>
-                        </div>
-                    </div>
+                        </template>
+                        <template #text>
+                            <p>Успешно работаем уже более семи лет</p>
+                        </template>
+                    </app-features-item>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- todo: Replace map, add styles and content -->
     <section class="section map">
         <div class="container">
             <div class="section__inner">
@@ -135,7 +150,7 @@
                 <div class="content"></div>
                 <div class="headers">
                     <app-section-header :title="'Калькулятор доставки'"></app-section-header>
-                    <!-- ! Will be rewrited by component tabs -->
+                    <!-- todo: Rewrite component on tabs and add some styles -->
                     <div class="tabs">
                         <div class="tab step">
                             <a class="tab__title">Выберите страну по которой хотите узнать время доставки</a>
@@ -155,6 +170,8 @@
             </div>
         </div>
     </section>
+
+    <!-- todo: Add images and styles -->
     <section class="section price__list">
         <div class="container">
             <div class="section__inner">
@@ -181,6 +198,7 @@
             </div>
         </div>
     </section>
+
     <app-callback></app-callback>
 </template>
 
@@ -341,39 +359,6 @@ const country = [
 
     .section__header {
         margin-bottom: 55px;
-    }
-    .features__item {
-        display: flex;
-        align-items: center;
-        padding: 40px;
-        background-color: vars.$color-g-dopdark;
-        border: 1px solid rgba(85, 122, 161, 0.3);
-        transition: all 0.12s ease-in;
-        cursor: default;
-
-        .icon {
-            display: block;
-            margin-right: 30px;
-            img {
-                width: 60px;
-                height: 82px;
-            }
-        }
-
-        .headers {
-            .title {
-                color: vars.$color-g-blue;
-                margin-bottom: 8px;
-            }
-
-            .text {
-                color: vars.$color-g-white;
-            }
-        }
-
-        &:hover {
-            border: 1px solid rgba(85, 122, 161, 0.6);
-        }
     }
 }
 .section.map {

@@ -4,7 +4,7 @@
     <section class="section for__brokers">
         <div class="container">
             <div class="section_inner">
-                <app-title>
+                <app-title class="section__title_forbrokers">
                     <h4>Помогаем брокерам из любых стран с доставкой цветов по всему СНГ</h4>
                 </app-title>
 
@@ -22,23 +22,43 @@
                         </div>
                         
                     </div>
-                    <div class="steps__list">
-                        <div class="step">
-                            <h5 class="step__title">1 шаг</h5>
-                            <p class="step__text">Клиент обращается/работает с брокером</p>
-                        </div>
-                        <div class="step">
-                            <h5 class="step__title">1 шаг</h5>
-                            <p class="step__text">Клиент обращается/работает с брокером</p>
-                        </div>
-                        <div class="step">
-                            <h5 class="step__title">1 шаг</h5>
-                            <p class="step__text">Клиент обращается/работает с брокером</p>
-                        </div>
-                        <div class="step">
-                            <h5 class="step__title">1 шаг</h5>
-                            <p class="step__text">Клиент обращается/работает с брокером</p>
-                        </div>
+                    <div class="features">
+                        <app-features-item>
+                            <template #title>
+                                <app-title><h5>Телефон</h5></app-title>
+                            </template>
+                            <template #text>
+                                <p>Клиент обращается/работает с брокером</p>
+                            </template>
+                            <template #step>01</template>
+                        </app-features-item>
+                        <app-features-item>
+                            <template #title>
+                                <app-title><h5>Телефон</h5></app-title>
+                            </template>
+                            <template #text>
+                                <p>Клиент обращается/работает с брокером</p>
+                            </template>
+                            <template #step>02</template>
+                        </app-features-item>
+                        <app-features-item>
+                            <template #title>
+                                <app-title><h5>Телефон</h5></app-title>
+                            </template>
+                            <template #text>
+                                <p>Клиент обращается/работает с брокером</p>
+                            </template>
+                            <template #step>03</template>
+                        </app-features-item>
+                        <app-features-item>
+                            <template #title>
+                                <app-title><h5>Телефон</h5></app-title>
+                            </template>
+                            <template #text>
+                                <p>Клиент обращается/работает с брокером</p>
+                            </template>
+                            <template #step>04</template>
+                        </app-features-item>
                     </div>
                 </div>
             </div>
@@ -53,7 +73,7 @@
 <style lang="scss" scoped>
 @use "@/assets/scss/vars";
 .section.for__brokers {
-    .title {
+    .title.section__title_forbrokers {
         padding: 0 260px;
         color: vars.$color-g-white;
         text-align: center;
@@ -134,74 +154,11 @@
         
     }
 
-    .steps__list {
+    .features {
         display: grid;
         grid-template-columns: repeat(2, 360px);
         grid-template-rows: repeat(2, 175px);
         gap: 30px;
-        .step {
-            position: relative;
-            padding: 40px;
-            background-color: vars.$color-g-dopdark;
-            border: 1px solid rgba(85, 122, 161, 0.3);
-            width: 360px;
-            height: 175px;
-
-            .step__title {
-                font-size: 30px;
-                font-weight: 600;
-                color: vars.$color-g-lightblue;
-                margin-bottom: 14px;
-            }
-
-            .step__text {
-                font-size: 16px;
-                font-weight: 400;
-                color: vars.$color-g-light;
-            }
-
-            &::before{
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 50%;
-                transform: translate(-100%, -50%);
-                width: 1px;
-                height: 50px;
-                background-color: vars.$color-g-blue;
-            }
-
-            &::after{
-                position: absolute;
-                top: 0;
-                right: 20px;
-                color: vars.$color-g-light;
-                opacity: 0.08;
-                font-size: 72px;
-                font-weight: 600;
-            }
-
-            &:nth-child(1) {
-                &::after{
-                    content: '01';
-                }
-            }
-            &:nth-child(2) {
-                &::after{
-                    content: '02';
-                }
-            }
-            &:nth-child(3) {
-                &::after{
-                    content: '03';
-                }
-            }
-            &:nth-child(4) {
-                &::after{
-                    content: '04';
-                }
-            }
-        }
     }
 }
 </style>

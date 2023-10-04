@@ -1,11 +1,13 @@
 <template>
     <YandexMap
-        :coordinates="coordinates"
+        :coordinates="coords"
         :settings="settings"
         :detailed-controls="detailedControls"
         :controls="controls"
-        map-type="hybrid"
-    />
+        :zoom="14"
+    >
+        <YandexMarker v-if="marker" :marker-id="marker.id" :coordinates="marker.coord"></YandexMarker>
+    </YandexMap>
 </template>
 
 <script>
@@ -15,21 +17,30 @@ export default {
 </script>
 
 <script setup>
-    import { YandexMap } from "vue-yandex-maps";
-    const settings = {
-        apiKey: '408935e7-ab0a-4b59-811b-f9a70134e4ef', // Индивидуальный ключ API
-        lang: 'ru_RU', // Используемый язык
-        coordorder: 'latlong', // Порядок задания географических координат
-        debug: false, // Режим отладки
-        version: '2.1' // Версия Я.Карт
+import { YandexMap, YandexMarker } from "vue-yandex-maps";
+defineProps({
+    coords: {
+        type: Array,
+        required: true
+    },
+    marker: {
+        type: Array,
+        required: false
     }
-    const coordinates = [55, 33];
-    const controls = ["fullscreenControl"];
-    const detailedControls = { zoomControl: { position: { right: 10, top: 50 } } };
+})
+const settings = {
+    apiKey: "408935e7-ab0a-4b59-811b-f9a70134e4ef",
+    lang: "ru_RU",
+    coordorder: "latlong",
+    debug: false,
+    version: "2.1",
+};
+const controls = ["default"];
+const detailedControls = { zoomControl: { position: { right: 10, top: 50 } } };
 </script>
 
 <style>
 .yandex-container {
-    height: 400px;
+    height: 100%;
 }
 </style>

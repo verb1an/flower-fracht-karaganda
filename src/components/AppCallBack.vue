@@ -1,4 +1,5 @@
 <template>
+    <!-- todo: Add some styles -->
     <section class="section callback">
         <div class="container">
             <div class="section__inner">

@@ -27,7 +27,7 @@ const menuItems = [
     },
     {
         text: "Контакты",
-        to: "/",
+        to: "/contacts",
     },
 ];
 
