@@ -1,5 +1,5 @@
 <template>
-    <button type="button" v-bind="$attrs" class="button">
+    <button type="button" class="button">
         <div class="button__wrapper">
             <slot></slot>
         </div>
@@ -10,18 +10,16 @@
             <span></span>
             <span></span>
         </div>
-
     </button>
 </template>
 
 <script>
 export default {
-    name: "app-button"
-}
+    name: "app-button",
+};
 </script>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 @use "@/assets/scss/vars";
@@ -40,7 +38,7 @@ export default {
     font-family: "Montserrat", "Arial", "sans-serif";
     font-size: 12px;
     font-weight: 500;
-    transition: all .12s ease-in-out;
+    transition: all 0.12s ease-in-out;
     text-transform: uppercase;
     letter-spacing: 1px;
 
@@ -80,10 +78,18 @@ export default {
 
     &:hover {
         .lines {
-            span:nth-child(1) {height: 100%;}
-            span:nth-child(2) {width: 100%;}
-            span:nth-child(3) {height: 100%;}
-            span:nth-child(4) {width: 100%;}
+            span:nth-child(1) {
+                height: 100%;
+            }
+            span:nth-child(2) {
+                width: 100%;
+            }
+            span:nth-child(3) {
+                height: 100%;
+            }
+            span:nth-child(4) {
+                width: 100%;
+            }
         }
     }
 

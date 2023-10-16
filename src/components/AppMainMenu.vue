@@ -1,5 +1,5 @@
 <template>
-    <nav class="nav" v-bind="$attr">
+    <nav class="nav">
         <ul class="menu">
             <li v-for="item in menu" :key="item.to" class="menu__item">
                 <router-link :to="item.to">{{ item.text }}</router-link>
@@ -29,7 +29,7 @@ const menu = inject("main-menu");
 
 <style lang="scss" scoped>
 @use "@/assets/scss/vars";
-.nav{ 
+.nav {
     .menu {
         list-style: none;
         display: grid;
@@ -51,7 +51,7 @@ const menu = inject("main-menu");
             }
 
             &::before {
-                content: '';
+                content: "";
                 position: absolute;
                 bottom: -10px;
                 left: 50%;
@@ -78,7 +78,7 @@ const menu = inject("main-menu");
     &.footer__style {
         width: 340px;
 
-        .menu{ 
+        .menu {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, 1fr);
             width: 100%;
@@ -87,7 +87,8 @@ const menu = inject("main-menu");
                 margin: 0;
                 margin-bottom: 20px;
                 text-align: left;
-                &:nth-child(2), &:nth-child(4) {
+                &:nth-child(2),
+                &:nth-child(4) {
                     text-align: right;
                 }
                 &::before {

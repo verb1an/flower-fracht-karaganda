@@ -4,7 +4,7 @@
         ? We pass 2 mandatory slots and 2 additional ones
      -->
 
-    <div class="features__item" v-bind="$attrs">
+    <div class="features__item">
         <div class="features__item_icon" v-if="$slots.icon">
             <slot name="icon"></slot>
         </div>

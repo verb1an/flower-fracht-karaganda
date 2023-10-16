@@ -3,7 +3,9 @@
     <section class="section callback">
         <div class="container">
             <div class="section__inner">
-                <app-section-header :title="'Заказать звонок'"></app-section-header>
+                <app-section-header>
+                    <h2>Заказать звонок</h2>
+                </app-section-header>
                 <span class="subtitle">Закажите звонок и наш менеджер свяжется с вами в ближайшее время</span>
                 <form action="#">
                     <div class="data__inputs">
@@ -25,14 +27,13 @@
             <span class="bgc-2"></span>
             <span class="bgc-3"></span>
         </div>
-        
     </section>
 </template>
 
 <script>
 export default {
-    name: "app-callback"
-}
+    name: "app-callback",
+};
 </script>
 
 <style lang="scss" scoped>
@@ -79,7 +80,5 @@ export default {
             background-image: url("@/assets/img/053491f4432b585c8ace59ec29fbe13d.jpg");
         }
     }
-
-    
 }
 </style>

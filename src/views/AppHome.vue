@@ -28,7 +28,7 @@
                     <div class="contacts">
                         <a href="tel:+74957378585"><span class="i-phone"></span>+7 (495) 737 8585</a>
                         <a href="mailto:ffkaragandainfo@info.ru"><span class="i-mail"></span>ffkaragandainfo@info.ru</a>
-                        <app-button>Связаться c нами</app-button> 
+                        <app-button>Связаться c нами</app-button>
                     </div>
                 </div>
 
@@ -39,12 +39,14 @@
     <section class="section features">
         <div class="container">
             <div class="section__inner">
-                <app-section-header class="tac" :title="'О нас в цифрах'"></app-section-header>
+                <app-section-header class="tac">
+                    <h2>О нас в цифрах</h2>
+                </app-section-header>
                 <!-- todo: Add content -->
                 <div class="content">
                     <app-features-item>
                         <template #icon>
-                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar">
+                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar" />
                         </template>
                         <template #title>
                             <app-title><h5>7 лет</h5></app-title>
@@ -55,7 +57,7 @@
                     </app-features-item>
                     <app-features-item>
                         <template #icon>
-                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar">
+                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar" />
                         </template>
                         <template #title>
                             <app-title><h5>7 лет</h5></app-title>
@@ -66,7 +68,7 @@
                     </app-features-item>
                     <app-features-item>
                         <template #icon>
-                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar">
+                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar" />
                         </template>
                         <template #title>
                             <app-title><h5>7 лет</h5></app-title>
@@ -77,7 +79,7 @@
                     </app-features-item>
                     <app-features-item>
                         <template #icon>
-                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar">
+                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar" />
                         </template>
                         <template #title>
                             <app-title><h5>7 лет</h5></app-title>
@@ -88,7 +90,7 @@
                     </app-features-item>
                     <app-features-item>
                         <template #icon>
-                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar">
+                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar" />
                         </template>
                         <template #title>
                             <app-title><h5>7 лет</h5></app-title>
@@ -99,7 +101,7 @@
                     </app-features-item>
                     <app-features-item>
                         <template #icon>
-                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar">
+                            <img src="@/assets/icons/features/i-calendar.svg" alt="calendar" />
                         </template>
                         <template #title>
                             <app-title><h5>7 лет</h5></app-title>
@@ -118,7 +120,9 @@
         <div class="container">
             <div class="section__inner">
                 <div class="headers">
-                    <app-section-header :title="'Откуда мы везем наши цветы?'"></app-section-header>
+                    <app-section-header>
+                        <h2>Откуда мы везем наши цветы?</h2>
+                    </app-section-header>
 
                     <p class="subtitle">
                         Мы рады предложить Вам надежную и быструю доставку свежих и красивых цветов из разных уголков
@@ -131,13 +135,13 @@
                     </p>
                     <p>
                         Мы привозим цветы и растения в горшках из <b>Эквадора</b>, <b>Кении</b>, <b>Колумбии</b>,
-                         <b>Чили</b>, <b>Нидерландов</b>, <b>Израиля</b> и доставляем их свежими во все регионы СНГ.
+                        <b>Чили</b>, <b>Нидерландов</b>, <b>Израиля</b> и доставляем их свежими во все регионы СНГ.
                     </p>
 
                     <app-button>Связаться с нами</app-button>
                 </div>
                 <div class="content">
-                    <img src="@/assets/img/map.png" alt="">
+                    <img src="@/assets/img/map.png" alt="" />
                 </div>
             </div>
         </div>
@@ -149,7 +153,9 @@
             <div class="section__inner">
                 <div class="content"></div>
                 <div class="headers">
-                    <app-section-header :title="'Калькулятор доставки'"></app-section-header>
+                    <app-section-header>
+                        <h2>Калькулятор доставки</h2>
+                    </app-section-header>
                     <!-- todo: Rewrite component on tabs and add some styles -->
                     <div class="tabs">
                         <div class="tab step">
@@ -159,13 +165,12 @@
                             </div>
                         </div>
                         <div class="tab step">
-                            <a class="tab__title">Что бы рассчитать дату доставки выберите день когда планируете сделать заказ</a>
-                            <div class="tab__content">
-                                
-                            </div>
+                            <a class="tab__title"
+                                >Что бы рассчитать дату доставки выберите день когда планируете сделать заказ</a
+                            >
+                            <div class="tab__content"></div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -176,13 +181,13 @@
         <div class="container">
             <div class="section__inner">
                 <div class="headers">
-                    <app-section-header :title="'Основные тарифы'" class="tac"></app-section-header>
+                    <app-section-header class="tac">
+                        <h2>Основные тарифы</h2>
+                    </app-section-header>
                 </div>
                 <div class="content">
                     <div class="price__item">
-                        <div class="price__item_content">
-
-                        </div>
+                        <div class="price__item_content"></div>
                     </div>
                     <div class="price__item">
                         <div class="price__item_content">
@@ -190,9 +195,7 @@
                         </div>
                     </div>
                     <div class="price__item">
-                        <div class="price__item_content">
-                           
-                        </div>
+                        <div class="price__item_content"></div>
                     </div>
                 </div>
             </div>
@@ -213,13 +216,13 @@ const carouselIntroItems = [
 ];
 
 const country = [
-    {text: "Эквадор", checked: true},
-    {text: "Кения", checked: false},
-    {text: "Колумбия", checked: false},
-    {text: "Чили", checked: false},
-    {text: "Нидерландов", checked: false},
-    {text: "Израиль", checked: false},
-]
+    { text: "Эквадор", checked: true },
+    { text: "Кения", checked: false },
+    { text: "Колумбия", checked: false },
+    { text: "Чили", checked: false },
+    { text: "Нидерландов", checked: false },
+    { text: "Израиль", checked: false },
+];
 </script>
 
 <style lang="scss" scoped>
@@ -425,7 +428,6 @@ const country = [
     }
 }
 .section.calculator__date {
-
     .section__inner {
         display: flex;
         align-items: center;
@@ -439,7 +441,6 @@ const country = [
     }
 }
 .section.price__list {
-
     .content {
         display: flex;
         align-items: center;
@@ -459,5 +460,4 @@ const country = [
         }
     }
 }
-
 </style>

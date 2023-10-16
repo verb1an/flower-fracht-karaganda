@@ -53,12 +53,66 @@
             </div>
         </div>
     </section>
+
+    <section class="section team">
+        <div class="container">
+            <div class="section__inner">
+                <app-section-header class="tac">
+                    <h2>Группы продаж</h2>
+                </app-section-header>
+
+                <div class="country__select">
+                    <span>
+                        Страна:
+                        <app-drop-menu 
+                            v-model="countryCurrent"
+                            :menu="countries"
+                            :style="'default'"
+                            @update:modelValue="() => countryAreaCurrent = 0"
+                        />
+                    </span>
+
+                    <span>
+                        Менеджер по::
+                        <app-drop-menu 
+                            v-model="countryAreaCurrent"
+                            :menu="countriesArea[countryCurrent]"
+                            :style="'default'"
+                        />
+                    </span>
+                    
+                </div>
+
+                <div class="slider__ofteam">
+                    <app-slider>
+                        <app-slide-item v-for="n in 10" :key="n">
+                            {{ n }}
+                        </app-slide-item>
+                    </app-slider>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
+const countryCurrent = ref(0),
+    countryAreaCurrent = ref(0);
+
+const countries = [
+    "Россия", "Казахстан", "Беларусь"
+];
+const countriesArea = [
+    ["Москва и Московская область", "Санкт-Петербург", "Новосибирск"],
+    ["Астана", "Караганда"],
+    ["Минск", "	Бобруйск", "Борисов"]
+]
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/vars";
 .section.contacts {
     .features{
         display: grid;
@@ -83,6 +137,27 @@
             width: 100%;
             height: 545px;
         }
+    }
+}
+
+.section.team {
+    .country__select{ 
+
+        display: flex;
+        align-items: center;
+        margin: 55px 0 40px 0;
+
+        span {
+            margin-right: 100px;
+            color: vars.$color-g-light;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .slider__ofteam {
+        height: 255px;
+        width: 100%;
     }
 }
 </style>

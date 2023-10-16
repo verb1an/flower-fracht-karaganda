@@ -6,12 +6,12 @@
                     v-for="n in menu.length"
                     :key="n"
                     class="line"
-                    :class="n - 1 == current ? 'current' : ''"
-                    :style="`transform: translate(calc(${n - 1 == current ? 0 : (n - 1 < current ? -20 : 20)}px - 50%), -50%)`"
+                    :class="n - 1 == modelValue ? 'current' : ''"
+                    :style="`transform: translate(calc(${n - 1 == modelValue ? 0 : (n - 1 < modelValue ? -20 : 20)}px - 50%), -50%)`"
                     >{{ menu[n - 1] }}</span
                 >
             </span>
-            <span v-else>{{ menu[current] }}</span>
+            <span v-else class="text">{{ menu[modelValue] }}</span>
             <span class="icon i-chevron"></span>
         </button>
 
@@ -37,7 +37,7 @@ import { ref } from "vue";
 
 const show = ref(false);
 defineProps({
-    current: {
+    modelValue: {
         type: [Number, String],
         required: true,
     },
@@ -51,7 +51,7 @@ defineProps({
         default: "none",
     },
 });
-const emit = defineEmits(["menu:returnValue"]);
+const emit = defineEmits(["update:modelValue"]);
 
 function showDropMenu() {
     show.value = !show.value;
@@ -66,7 +66,7 @@ function hideDropMenu(event) {
 
 function returnValue(event) {
     show.value = false;
-    emit("menu:returnValue", event.target.closest(".menu__item").getAttribute("data-value"));
+    emit("update:modelValue", event.target.closest(".menu__item").getAttribute("data-value"));
 }
 </script>
 
@@ -85,10 +85,15 @@ function returnValue(event) {
         font-weight: 500;
         min-width: 46px;
 
+        display: flex;
+        align-items: center;
+
+        span.text {
+            margin-right: 10px;
+        }
+
         &.border-border {
             font-size: 12px;
-            display: flex;
-            align-items: center;
 
             span.text {
                 position: relative;
@@ -99,7 +104,7 @@ function returnValue(event) {
                 text-align: center;
                 text-transform: uppercase;
                 border: 1px solid vars.$color-g-gray;
-                margin-right: 10px;
+        
 
                 font-size: 12px;
                 font-weight: 600;

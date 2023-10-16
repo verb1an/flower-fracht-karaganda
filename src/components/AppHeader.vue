@@ -9,11 +9,11 @@
 
                     <div class="switch__lang">
                         <app-drop-menu
-                            :current="lang"
+                            v-model="lang"
                             :menu="langItems"
                             :style="'border'"
                             @menu:returnValue="(value) => lang = value"
-                        ></app-drop-menu>
+                        />
                     </div>
                 </div>
                 

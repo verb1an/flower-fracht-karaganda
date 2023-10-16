@@ -11,8 +11,6 @@ import AppFooter from "@/components/AppFooter"
 import AppMainMenu from "@/components/AppMainMenu"
 import AppCallBack from "@/components/AppCallBack"
 import AppPageHeader from "@/components/AppPageHeader"
-import AppTabs from "@/components/AppTabs"
-import AppTab from "@/components/AppTab"
 import AppMap from "@/components/AppMap"
 import AppFeaturesItem from "@/components/AppFeaturesItem"
 import AppDropMenu from "@/components/AppDropMenu"
@@ -21,6 +19,8 @@ import AppSectionHeader from "@/components/AppSectionHeader"
 
 import AppCarousel from "@/components/AppCarousel"
 import AppCountryView from "@/components/AppCountryView"
+import AppSlider from "@/components/AppSlider"
+import AppSlideItem from "@/components/AppSlideItem"
 
 export default [
     AppLogo,
@@ -37,13 +37,13 @@ export default [
     AppMainMenu,
     AppCallBack,
     AppPageHeader,
-    AppTabs,
-    AppTab,
     AppMap,
     AppFeaturesItem,
 
     AppSectionHeader,
 
     AppCarousel,
-    AppCountryView
+    AppCountryView,
+    AppSlider,
+    AppSlideItem
 ]

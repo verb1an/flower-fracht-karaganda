@@ -1,21 +1,14 @@
 <template>
     <section class="headers">
-        
         <div class="page__headers">
             <div class="titles">
-                <app-title class="suptitle"
-                    ><h6 style="font-size: 12px; font-weight: 500; text-transform: uppercase">
-                        Flower Fracht Karaganda
-                    </h6></app-title
-                >
-                <app-title
-                    ><h2 style="font-size: 72px; font-weight: 600">{{ title }}</h2></app-title
-                >
+                <app-section-header>
+                    <h1>{{ title }}</h1>
+                </app-section-header>
             </div>
 
             <img class="page__header_bg" :src="require(`@/${imgLink}`)" :alt="`page header ${title}`" />
         </div>
-
     </section>
 </template>
 

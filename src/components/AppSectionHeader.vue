@@ -1,24 +1,21 @@
 <template>
-    <section class="section__header" v-bind="$attrs">
+    <section class="section__header">
         <span class="suptitle">Flower Fracht Karaganda</span>
-        <app-title><h2>{{ title }}</h2></app-title>
+
+        <!-- * Can slot only h-type tag -->
+        <app-title>
+            <slot></slot>
+        </app-title>
     </section>
 </template>
 
 <script>
 export default {
-    name: "app-section-header"
-}
+    name: "app-section-header",
+};
 </script>
 
-<script setup>
-defineProps({
-    title: {
-        type: String,
-        required: true
-    }
-})
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 @use "@/assets/scss/vars";
