@@ -16,7 +16,7 @@
                         <app-checkbox>
                             <span>Даю свое согласия на обработку <a href="#">персональных данных</a></span>
                         </app-checkbox>
-                        <app-button>Заказать звонок</app-button>
+                        <app-button @click="$emit(`modal:show`, true)">Заказать звонок</app-button>
                     </div>
                 </form>
             </div>

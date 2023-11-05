@@ -84,9 +84,20 @@
                 </div>
 
                 <div class="slider__ofteam">
-                    <app-slider>
+                    <app-slider
+                        :params="{
+                            current: 1,
+                            pagination: true,
+                            gap: 30,
+                            viewItems: 2,
+                            transition: 500
+                        }"
+                    >
                         <app-slide-item v-for="n in 10" :key="n">
                             {{ n }}
+                        </app-slide-item>
+                        <app-slide-item>
+                            123
                         </app-slide-item>
                     </app-slider>
                 </div>
@@ -109,6 +120,10 @@ const countriesArea = [
     ["Астана", "Караганда"],
     ["Минск", "	Бобруйск", "Борисов"]
 ]
+
+// const params = ref({
+    
+// })
 </script>
 
 <style lang="scss" scoped>

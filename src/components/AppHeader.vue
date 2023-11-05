@@ -31,7 +31,7 @@ export default {
 <script setup>
 import { ref } from "vue";
 
-const lang = ref(0);
+const lang = ref(1);
 const langItems = ref(["Ru", "En", "Kz", "Es"]);
 </script>
 

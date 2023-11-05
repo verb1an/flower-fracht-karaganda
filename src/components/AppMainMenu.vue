@@ -19,12 +19,6 @@ import { inject } from "vue";
 
 const menu = inject("main-menu");
 
-// defineProps({
-//     menu: {
-//         type: Array,
-//         required: true
-//     }
-// })
 </script>
 
 <style lang="scss" scoped>

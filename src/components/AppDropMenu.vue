@@ -1,17 +1,24 @@
 <template>
     <div class="dropdown__menu" :data-show="show">
         <button class="dropdown__trigger" type="button" :class="'border-' + style" @click="showDropMenu">
-            <span v-if="style == 'border'" class="text">
-                <span
-                    v-for="n in menu.length"
-                    :key="n"
-                    class="line"
-                    :class="n - 1 == modelValue ? 'current' : ''"
-                    :style="`transform: translate(calc(${n - 1 == modelValue ? 0 : (n - 1 < modelValue ? -20 : 20)}px - 50%), -50%)`"
-                    >{{ menu[n - 1] }}</span
+            <div v-if="style == 'border'" class="text__slider">
+                <app-slider
+                    :params="{
+                        current: Number(modelValue) + 1,
+                        controlls: false,
+                        gap: 20,
+                        transition: 200,
+                    }"
                 >
-            </span>
-            <span v-else class="text">{{ menu[modelValue] }}</span>
+                    <app-slide-item v-for="n in menu.length" :key="n">
+                        <span class="line">{{ menu[n - 1] }}</span>
+                    </app-slide-item>
+                </app-slider>
+            </div>
+
+            <span v-else class="text">
+                {{ menu[modelValue] }}
+             </span>
             <span class="icon i-chevron"></span>
         </button>
 
@@ -51,6 +58,7 @@ defineProps({
         default: "none",
     },
 });
+
 const emit = defineEmits(["update:modelValue"]);
 
 function showDropMenu() {
@@ -63,9 +71,9 @@ function hideDropMenu(event) {
     show.value = false;
     document.removeEventListener("click", hideDropMenu);
 }
-
 function returnValue(event) {
     show.value = false;
+    console.log(  )
     emit("update:modelValue", event.target.closest(".menu__item").getAttribute("data-value"));
 }
 </script>
@@ -76,12 +84,8 @@ function returnValue(event) {
     position: relative;
 
     .dropdown__trigger {
-        cursor: pointer;
         color: vars.$color-g-white;
         font-size: inherit;
-        border: 0;
-        background-color: transparent;
-        outline: none;
         font-weight: 500;
         min-width: 46px;
 
@@ -95,35 +99,31 @@ function returnValue(event) {
         &.border-border {
             font-size: 12px;
 
-            span.text {
+            .text__slider {
                 position: relative;
                 overflow: hidden;
                 width: 46px;
                 height: 46px;
-                padding: 16px 13px;
+                // padding: 16px 13px;
                 text-align: center;
                 text-transform: uppercase;
-                border: 1px solid vars.$color-g-gray;
-        
-
                 font-size: 12px;
                 font-weight: 600;
+                border: 1px solid vars.$color-g-gray;
 
                 span.line {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    opacity: 0;
-                    transition: all 0.12s ease-in;
+                    display: block;
                     font-size: 12px;
                     font-weight: 600;
                     text-transform: uppercase;
+                    opacity: 0;
+                    padding: 16px 13px;
+                }
 
-                    &.current {
+                .slider__item.active {
+                    span.line {
                         opacity: 1;
                     }
-
                 }
             }
         }
@@ -135,6 +135,7 @@ function returnValue(event) {
             font-size: 12px;
             color: vars.$color-g-blue;
             transition: all 0.12s ease-in;
+            margin-left: 10px;
         }
     }
 

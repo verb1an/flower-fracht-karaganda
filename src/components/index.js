@@ -14,6 +14,7 @@ import AppPageHeader from "@/components/AppPageHeader"
 import AppMap from "@/components/AppMap"
 import AppFeaturesItem from "@/components/AppFeaturesItem"
 import AppDropMenu from "@/components/AppDropMenu"
+import AppModal from "@/components/AppModal"
 
 import AppSectionHeader from "@/components/AppSectionHeader"
 
@@ -29,9 +30,8 @@ export default [
     AppList,
     AppCheckBox,
     AppRadio,
-    AppDropMenu,
     AppInput,
-
+    
     AppHeader,
     AppFooter,
     AppMainMenu,
@@ -39,6 +39,8 @@ export default [
     AppPageHeader,
     AppMap,
     AppFeaturesItem,
+    AppDropMenu,
+    AppModal,
 
     AppSectionHeader,
 

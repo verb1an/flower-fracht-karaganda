@@ -1,6 +1,7 @@
 <template>
     <section class="section__header">
-        <span class="suptitle">Flower Fracht Karaganda</span>
+        <span v-if="$slots.suptitle" class="suptitle"><slot name="suptitle" /></span>
+        <span v-else class="suptitle">Flower Fracht Karaganda</span>
 
         <!-- * Can slot only h-type tag -->
         <app-title>

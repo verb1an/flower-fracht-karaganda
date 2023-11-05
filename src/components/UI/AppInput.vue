@@ -12,8 +12,6 @@ export default {
 </script>
 
 <script setup>
-import { defineEmits, defineProps } from "vue";
-
 defineProps({
     modelValue: { type: String, required: false, default: "" },
     placeholder: { type: String, required: false, default: "" },

@@ -2,7 +2,41 @@
     <section class="section intro">
         <div class="container">
             <div class="section__inner">
-                <app-carousel :list="carouselIntroItems" />
+                <section class="main__slider">
+                    <app-slider
+                        :params="{
+                            current: activeSlide,
+                            type: 'opacity-fade',
+                            pagination: true,
+                            controlls: false,
+                        }"
+                    >
+                        <app-slide-item v-for="item in carouselIntroItems" :key="item.img">
+                            <div class="slide">
+                                <img :src="require(`@/${item.img}`)" alt="slider flower carousel" />
+                            </div>
+                        </app-slide-item>
+
+                        <template #pagination>
+                            <div class="pagination">
+                                <button
+                                    v-for="(item, n) in carouselIntroItems"
+                                    :key="item.img"
+                                    type="button"
+                                    class="button__pagination v_button-pag"
+                                    :data-pag="n + 1"
+                                    :data-show="carousel.getPosList[n] <= 3 && carousel.getPosList[n] >= 1"
+                                    :data-pos="carousel.getPosList[n]"
+                                    :style="`transform: translateX(${190 * carousel.getPosList[n]}px);`"
+                                    @click="carousel.switchSlide(n)"
+                                >
+                                    <img :src="require(`@/${item.img}`)" alt="slider flower pagination" />
+                                    <span class="country__tr">{{ carouselIntroItems[n].country.substr(0, 2) }}</span>
+                                </button>
+                            </div>
+                        </template>
+                    </app-slider>
+                </section>
 
                 <div class="content">
                     <div class="headers">
@@ -28,7 +62,7 @@
                     <div class="contacts">
                         <a href="tel:+74957378585"><span class="i-phone"></span>+7 (495) 737 8585</a>
                         <a href="mailto:ffkaragandainfo@info.ru"><span class="i-mail"></span>ffkaragandainfo@info.ru</a>
-                        <app-button>Связаться c нами</app-button>
+                        <app-button @click="$emit(`modal:show`, true)">Связаться c нами</app-button>
                     </div>
                 </div>
 
@@ -138,7 +172,7 @@
                         <b>Чили</b>, <b>Нидерландов</b>, <b>Израиля</b> и доставляем их свежими во все регионы СНГ.
                     </p>
 
-                    <app-button>Связаться с нами</app-button>
+                    <app-button @click="$emit(`modal:show`, true)">Связаться с нами</app-button>
                 </div>
                 <div class="content">
                     <img src="@/assets/img/map.png" alt="" />
@@ -206,6 +240,13 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+import { useCarouselIntro } from "@/hooks/carouselIntro";
+
+defineEmits([
+    "modal:show"
+])
+
 const carouselIntroItems = [
     { img: "assets/img/carousel/carousel-с7fe20029d89cca5e49daf963db4dfbda.jpg", country: "Ecuador" },
     { img: "assets/img/carousel/carousel-be32d90b8e790c4043cdeff255fc5aa3.jpg", country: "Kenya" },
@@ -223,16 +264,115 @@ const country = [
     { text: "Нидерландов", checked: false },
     { text: "Израиль", checked: false },
 ];
+const activeSlide = ref(1);
+
+const carousel = new useCarouselIntro(activeSlide.value, carouselIntroItems.length);
 </script>
 
 <style lang="scss" scoped>
 @use "@/assets/scss/vars";
+
+.main__slider {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 425px;
+    height: 880px;
+    z-index: 25;
+
+    .slide {
+        position: relative;
+        width: 425px;
+        height: 880px;
+
+        img {
+            width: 425px;
+            height: 880px;
+            object-fit: cover;
+        }
+    }
+
+    .pagination {
+        position: absolute;
+        top: -400px;
+        left: 45%;
+        z-index: 25;
+        display: flex;
+        align-items: center;
+
+        .button__pagination {
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 160px;
+            height: 250px;
+            margin-right: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+
+            img {
+                width: 160px;
+                height: 240px;
+                object-fit: cover;
+                opacity: 0;
+                transition: all 0.24s ease-in;
+            }
+
+            .country__tr {
+                display: block;
+                text-align: center;
+                color: vars.$color-g-white;
+                font-size: 14px;
+                font-weight: 600;
+                opacity: 0.6;
+                margin: 25px auto;
+                transition: all 0.12s ease-in;
+
+                &.show__false {
+                    opacity: 0;
+                }
+            }
+
+            &[data-show="true"] {
+                pointer-events: auto;
+                width: 160px;
+
+                img {
+                    opacity: 1;
+                }
+            }
+
+            &[data-pos="0"] {
+                .country__tr {
+                    opacity: 0;
+                }
+            }
+
+            &[data-pos="5"] {
+                .country__tr {
+                    transition-delay: 0.3s;
+                }
+            }
+
+            &:hover {
+                .country__tr {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
 
 .section.intro {
     position: relative;
     height: 880px;
     width: 100%;
     padding: 80px 0;
+
+    .section__inner {
+        isolation: isolate;
+    }
     .content {
         position: relative;
         display: flex;
